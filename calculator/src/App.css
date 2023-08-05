@@ -1,0 +1,87 @@
+@import "https://fonts.googleapis.com/css?family=Share+Tech+Mono";
+@font-face {
+  font-family: "Digital";
+  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot");
+  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff") format("woff"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7") format("svg");
+}
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+#app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#app > .credit {
+  font-family: Digital;
+}
+.calculator {
+  display: grid;
+  grid-template-areas: "exp exp exp exp" "io  io  io  io" "ac  ac   .   ." ".   .   .   ." ".   .   .   ." ".   .   .   eq" "n0  n0  .   eq";
+  grid-gap: 1px;
+  padding: 5px;
+  background-color: black;
+}
+.calculator > div {
+  --font-size: 2em;
+  min-height: var(--font-size);
+  min-width: var(--font-size);
+  color: white;
+  font-size: var(--font-size);
+}
+.calculator > div.exp {
+  min-height: 1em;
+  grid-area: exp;
+  font-size: calc(var(--font-size) * 0.5);
+  font-family: Digital;
+  color: orange;
+  display: flex;
+  justify-content: flex-end;
+}
+.calculator > div.io {
+  min-height: 1em;
+  grid-area: io;
+  font-family: Digital;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.calculator > div.ac {
+  grid-area: ac;
+  background-color: rgba(24, 226, 65, 0.823);
+}
+.calculator > div.eq {
+  grid-area: eq;
+  background-color: blue;
+}
+.calculator > div.n0 {
+  grid-area: n0;
+}
+.calculator > div[class^="n"], .calculator > div.dec {
+  background-color: dimgray;
+}
+.calculator > div.m, .calculator > div.d, .calculator > div.a, .calculator > div.s {
+  background-color: gray;
+}
+.calculator > div > button {
+  min-height: 100%;
+  min-width: 100%;
+  color: white;
+  background-color: inherit;
+  border: none;
+  outline: none;
+  font-size: calc(var(--font-size) * 0.5);
+}
+.calculator > div > button:hover {
+  border: 1px solid red;
+  color: black;
+}

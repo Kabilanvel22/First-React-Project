@@ -1,0 +1,102 @@
+:root {
+  --color-theme: dodgerblue;
+  --background-color: white;
+  --padding: 10px;
+  --margin: 20px;
+  --border-radius: 5px;
+  --delay: 2s;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  background-color: var(--color-theme);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: background-color var(--delay) linear;
+}
+
+#quote-box {
+  width: 400px;
+  padding: var(--padding);
+  background-color: var(--background-color);
+
+  border-radius: var(--border-radius);
+}
+
+#text {
+  margin: var(--margin);
+  color: var(--color-theme);
+
+  transition: opacity calc(var(--delay) / 2) linear;
+}
+
+#text::before {
+  content: open-quote;
+}
+
+#author {
+  margin: var(--margin);
+  color: var(--color-theme);
+
+  display: flex;
+  justify-content: flex-end;
+
+  transition: opacity calc(var(--delay) / 2) linear;
+}
+
+#author::before {
+  white-space: pre;
+  content: "-- ";
+}
+
+#buttons {
+  margin: var(--margin);
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  background-color: var(--color-theme);
+  color: var(--background-color);
+  text-decoration: none;
+  border-style: none;
+  outline: none;
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+
+  transition: background-color var(--delay) linear;
+}
+
+#coder {
+  color: var(--background-color);
+  padding: var(--padding);
+
+  display: flex;
+  justify-content: center;
+}
